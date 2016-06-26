@@ -1,0 +1,31 @@
+.profilePane{
+	text-align: right;
+}
+
+.profilePic{
+	width:100px;
+	height:100px;
+}
+
+.name{
+	font-size: 30px;
+	text-align: left;
+}
+
+.phone{
+	font-size: 20px;
+	text-align: left;
+}
+
+.address{
+	font-size: 20px;
+	text-align: left;
+}
+
+.distance{
+	border-color: #000000;
+	border-style: solid;
+	border-width: 2px;
+	font-size: 20px;
+	text-align: center;
+}
