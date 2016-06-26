@@ -15,7 +15,8 @@ def getproviders(zipcode):
         json = get_providers(zipcode)
         return flask.jsonify({'result': json}), status.HTTP_200_OK
     except:
-        return flask.jsonify({'message':'No providers found!'}), status.HTTP_404_NOT_FOUND
+        # return flask.jsonify({'message':'No providers found!'}), status.HTTP_404_NOT_FOUND
+        return flask.jsonify({'message': json}), status.HTTP_404_NOT_FOUND
 
 @app.route("/api/getlocation", methods=['GET'])
 def getlocation():
