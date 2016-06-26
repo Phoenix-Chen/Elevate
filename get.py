@@ -2,7 +2,10 @@ import pokitdok
 import simplejson
 
 #pd = pokitdok.api.connect('hQNYOkewxszEE5RM9vQ5', 'AiagztbCKl4amaHE5qQM9amOsULzLE2V1M3oZves')
-pd = pokitdok.api.connect('N6Q0xgv7pa16lP1LWrR7', 'ZQgBx4Rhfq3tq5s15QIy8dEyXJew3UyKzRJQyhk5')
+#pd = pokitdok.api.connect('N6Q0xgv7pa16lP1LWrR7', 'ZQgBx4Rhfq3tq5s15QIy8dEyXJew3UyKzRJQyhk5')
+#pd = pokitdok.api.connect('AFHQlg9ZFUMREthSisma', 'Xj1yJrWFwfWSRY0F5XbyDcD7yQLf72Y0iq5chJUu')
+#pd = pokitdok.api.connect('psD95Yv9BH6N9NilKB6R', 'Aem7cKpOCbwHECl2E3cxCSW3QTheDzNVmprclxpN')
+pd = pokitdok.api.connect('OxP6c949uBHHvUIWdzWn', 'jxWeQVSacvZLQ1fv5KsXhwvJPKesfacorTYnokZo')
 
 def get_providers(zipc, rad):
     return filter(pd.providers(zipcode = str(zipc), radius = str(rad)+'mi', specialty='psychologist', sort='distance'))[:-1]+']'

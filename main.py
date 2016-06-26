@@ -14,7 +14,7 @@ def getproviders(zipcode, radius):
     try:
         json = get_providers(zipcode, radius)
         #print json
-        return flask.jsonify({'message':'', 'result': json}), status.HTTP_200_OK
+        return flask.jsonify({'result': json}), status.HTTP_200_OK
     except:
         return flask.jsonify({'message':'No providers found!'}), status.HTTP_404_NOT_FOUND
 
