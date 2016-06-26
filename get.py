@@ -7,8 +7,8 @@ import simplejson
 #pd = pokitdok.api.connect('psD95Yv9BH6N9NilKB6R', 'Aem7cKpOCbwHECl2E3cxCSW3QTheDzNVmprclxpN')
 pd = pokitdok.api.connect('OxP6c949uBHHvUIWdzWn', 'jxWeQVSacvZLQ1fv5KsXhwvJPKesfacorTYnokZo')
 
-def get_providers(zipc, rad):
-    return filter(pd.providers(zipcode = str(zipc), radius = str(rad)+'mi', specialty='psychologist', sort='distance'))[:-1]+']'
+def get_providers(zipc):
+    return filter(pd.providers(zipcode = str(zipc), radius = '10mi', specialty='psychologist', sort='distance'))[:-1]+']'
 
 def filter(jsonstr):
     providers_list = jsonstr.get('data')
@@ -16,7 +16,7 @@ def filter(jsonstr):
     octavia = '"Providers":[ '
     for provider_data in providers_list:
         if i >= 3:
-            return octavia
+            make_txt(octavia)
         octavia = octavia + '{"distance":"' + str(provider_data.get('distance')) + '",'
         provider = provider_data.get('provider')
         octavia = octavia + '"name":"' + provider.get('first_name') + ' ' + provider.get('last_name') + '",'
@@ -24,6 +24,11 @@ def filter(jsonstr):
         octavia = octavia + '"address":"' + location.get('address_lines')[0] + ', ' + location.get('city') + '",'
         octavia = octavia + '"phone":"' + str(provider.get('phone')) + '"},'
         i = i + 1
+        
+def make_txt(text):
+    file = open("providers.txt", "w")
+    file.write(text)
+    file.close()
 
 if __name__ == "__main__":
     print get_providers('94040', '10')

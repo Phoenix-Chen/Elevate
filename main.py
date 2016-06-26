@@ -9,11 +9,10 @@ app = Flask(__name__)
 
 RQ(app)
 
-@app.route("/api/getproviders/<zipcode>/<radius>", methods=['GET'])
-def getproviders(zipcode, radius):
+@app.route("/api/getproviders/<zipcode>", methods=['POST'])
+def getproviders(zipcode):
     try:
-        json = get_providers(zipcode, radius)
-        #print json
+        json = get_providers(zipcode)
         return flask.jsonify({'result': json}), status.HTTP_200_OK
     except:
         return flask.jsonify({'message':'No providers found!'}), status.HTTP_404_NOT_FOUND
