@@ -10,6 +10,7 @@
     <title>Elevate Mental Health - Matches</title>
     <link href="stylesheets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="stylesheets/css/matches.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
 </head>
 <body style="overflow-x:hidden">
 	<div class="row">
@@ -26,13 +27,25 @@
 		<br>
 		<br>
 		
-		<div class="col-md-6 col-md-offset-3">
-			<div class="col-md-3"><img src="images/MissJelly.png" style="cursor: pointer;" onclick="window.location.href = 'assessment.html'"></div>
-			<div class="col-md-3"><img src="images/Mr.Tortoise.png" style="cursor: pointer;"></div>
-			<div class="col-md-3"><img src="images/Mrs.Blue.png" style="cursor: pointer;"></div>
-			
+		<div class="col-md-6 col-md-offset-3 text-center">
+			<div class="col-md-3">
+				<img src="images/MissJelly.png" style="cursor: pointer;" onclick="window.location.href = 'assessment.html'"><br>
+				<span id="name1"></span><br>
+				<span id="distance1"></span>
+			</div>
+			<div class="col-md-3">
+				<img src="images/Mr.Tortoise.png" style="cursor: pointer;"><br>
+				<span id="name2"></span><br>
+				<span id="distance2"></span>
+			</div>
+			<div class="col-md-3">
+				<img src="images/Mrs.Blue.png" style="cursor: pointer;"><br>
+				<span id="name3"></span><br>
+				<span id="distance3"></span>
+			</div>
 		</div>
     </div>
 </div>
+<script src="scripts/matches.js"></script>
 </body>
 </html>

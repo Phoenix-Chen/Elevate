@@ -4,7 +4,9 @@ function assess(){
 	$.ajax({
         type: 'POST',
         url: 'http://localhost:5000/api/getproviders/'+zip,
-        success: function(){
+        success: function(data){
+            console.log(data);
+            localStorage.setItem('list',JSON.stringify(data));
             console.log("Success!");
         },
         error: function(){

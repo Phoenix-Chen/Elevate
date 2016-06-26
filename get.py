@@ -16,9 +16,11 @@ def filter(jsonstr):
     octavia = '"Providers":[ '
     for provider_data in providers_list:
         provider = provider_data.get('provider')
-        if i >= 3:
-            make_txt(octavia)
+        
         if provider.get('entity_type') == 'individual':
+            if i >= 3:
+                make_txt(octavia)
+                return octavia 
             octavia = octavia + '{"distance":"' + str(provider_data.get('distance')) + '",'
             octavia = octavia + '"name":"' + provider.get('first_name') + ' ' + provider.get('last_name') + '",'
             location = provider.get('locations')[0]
@@ -26,7 +28,6 @@ def filter(jsonstr):
             octavia = octavia + '"phone":"' + str(provider.get('phone')) + '"},'
             i = i + 1
             print octavia
-    return octavia 
         
 def make_txt(text):
     file = open("providers.txt", "w")
